@@ -1,28 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="author" content="Lherm">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="BankUP - Your trusted financial partner">
-    <meta name="keywords" content="BankUP, banking, finance, loans, savings, investments">
-    <link rel="stylesheet" href="../styles/index.css" crossorigin="use-credentials">
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="author" content="Lherm" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="BankUP - Seu parceiro financeiro de confiança!"
+    />
+    <meta
+      name="keywords"
+      content="banco, finanças, investimentos, empréstimos, contas"
+    />
+    <link
+      rel="stylesheet"
+      href="../styles/index.css"
+      crossorigin="use-credentials"
+    />
     <link rel="icon" type="image/png" href="../assets/icons/favicon.png" />
     <script src="../scripts/index.js" crossorigin="use-credentials"></script>
-    <title>BankUP</title>
-</head>
-<body>
-    <header>
-        <h1>BankUP</h1>
+    <title>BankUP | Home</title>
+  </head>
+  <body>
+    <header class="header">
+      <picture class="logo">
+        <a href="../pages/index.html">
+          <img
+            src="../assets/logo.png"
+            alt="BankUP Logo"
+            width="100"
+            height="100"
+          />
+        </a>
+      </picture>
+      <nav class="first-navigation">
+        <ul class="list-navigation">
+          <li><a href="../pages/index.html">Home</a></li>
+          <li><a href="../pages/about.html">About Us</a></li>
+          <li><a href="../pages/services.html">Services</a></li>
+          <li><a href="../pages/contact.html">Contact</a></li>
+        </ul>
+      </nav>
     </header>
-    <main>
-        <h2>Welcome to BankUP</h2>
-        <p>Your trusted financial partner.</p>
+    <main lazyload="true" class="main-content">
+      <section class="container-one-card">
+        <h2 class="title-container-card">Seu cartão</h2>
+        <div class="card">
+          <div class="card-front">
+            <div class="card-chip"></div>
+            <div class="card-number">1234 5678 9012 3456</div>
+            <div class="card-holder">JOHN DOE</div>
+            <div class="card-expiration">12/34</div>
+          </div>
+        </div>
+      </section>
     </main>
-    <footer>
-        <p>&copy; 2026 BankUP. All rights reserved.</p>
+    <footer class="pezinho">
+      <p>&copy; 2026 BankUP. All rights reserved.</p>
     </footer>
-</body>
+  </body>
 </html>
