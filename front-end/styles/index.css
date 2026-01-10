@@ -25,6 +25,10 @@ body {
   line-height: 1.6;
 }
 
+main {
+  min-height: 100vh;
+}
+
 .header {
   /* Cabeçalho... */
   background-image: linear-gradient(
@@ -33,11 +37,14 @@ body {
     var(--secondary-color),
     var(--terciary-color)
   ); /* Um verdadeiro 'Oceano' de cores */
+  position: sticky; /* Mantém o cabeçalho fixo ao rolar */
+  top: 0; /* Fixa o cabeçalho no topo da página */
   color: rgb(255, 255, 255);
   padding: 16px 24px;
   display: flex; /* coloca os elementos lado a lado */
   align-items: center; /* alinha verticalmente */
   justify-content: space-between; /* logo à esquerda, menu à direita */
+  z-index: 1000; /* Garante que o cabeçalho fique acima de outros elementos */
 }
 
 .logo img {
@@ -58,7 +65,7 @@ body {
   font-weight: bold;
   padding: 8px 12px;
   border-radius: 4px;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
 
 .list-navigation li a:hover {
@@ -69,12 +76,118 @@ body {
   background-color: rgba(255, 255, 255, 0.4);
 }
 
+.container-one-for-card {
+  max-width: 50dvw;
+  min-height: 25vh;
+  background-color: var(--default-color);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: block;
+  margin: 20px;
+  padding: 0 20px;
+  border-radius: 15px;
+}
+
+.card {
+  perspective: 1000px;
+  cursor: pointer;
+  width: 400px;
+  height: 200px;
+  position: relative;
+  transition: transform 1.2s ease;
+  transform-style: preserve-3d;
+}
+
+.card-line {
+  background-image: linear-gradient(180deg, #111, #222);
+  position: absolute;
+  left: 0;
+  height: 20px;
+  width: 100%;
+}
+
+.card-stripe {
+  background-image: linear-gradient(180deg, #222, #333);
+  position: absolute;
+  top: 40px;
+  left: 0;
+  height: 40px;
+  width: 100%;
+}
+
+.card-signature {
+  background-color: #ffffff;
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  height: 30px;
+  width: 200px;
+}
+
+.card-cvv {
+  position: absolute;
+  bottom: 65px;
+  right: 25px;
+  font-weight: bold;
+  color: #000;
+}
+
+.card-front {
+  position: relative;
+  max-width: 500px;
+  height: 200px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 0;
+}
+
+.card-chip {
+  width: 60px;
+  height: 40px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #d4af37, #b8860b);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.card-chip p {
+  color: #ffffffc9;
+  font-weight: bold;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  right: 0;
+}
+
+.card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+  color: #fff;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+}
+
+/*
+.card:hover {
+  transform: rotateY(180deg);
+}
+*/
+
 .pezinho {
   background-color: var(--primary-color); /* Cor de fundo (Azul combina será?)*/
   color: #fff; /* Põe o branco para contraste */
   text-align: center; /* Centraliza o texto */
   padding: 12px 0; /* Leve espaçamento, para não ficar feio */
-  position: fixed; /* Fixa o rodapé no final da página */
   bottom: 0; /* 0 é um número ou elemento matemático? */
   width: 100%; /* Ocupa toda a largura da tela */
 }
